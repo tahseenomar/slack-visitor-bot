@@ -128,13 +128,12 @@ def open_modal(trigger_id):
                 {
                     "type": "input",
                     "block_id": "reason",
-                    "label": {"type": "plain_text", "text": "Reason for visit"},
+                    "label": {"type": "plain_text", "text": "Reason for or nature of visit"},
                     "element": {
                         "type": "plain_text_input",
                         "action_id": "value",
                         "multiline": True
                     }
-                    "optional": True
                 }
             ]
         }
