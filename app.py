@@ -113,7 +113,7 @@ def open_modal(trigger_id):
                         "type": "plain_text_input",
                         "action_id": "value"
                     },
-                    "hint": {"type": "plain_text", "text": "e.g., 2:30pm"}
+                    "hint": {"type": "plain_text", "text": "E.g., 2:30pm"}
                 },
                 {
                     "type": "input",
@@ -123,7 +123,7 @@ def open_modal(trigger_id):
                         "type": "plain_text_input",
                         "action_id": "value"
                     },
-                    "hint": {"type": "plain_text", "text": "e.g., 3:30pm"}
+                    "hint": {"type": "plain_text", "text": "E.g., 3:30pm"}
                 },
                 {
                     "type": "input",
