@@ -19,6 +19,8 @@ verifier = SignatureVerifier(signing_secret=os.environ["SLACK_SIGNING_SECRET"])
 
 @app.route("/slack/events", methods=["POST"])
 def slack_events():
+    print("🚨 Slack just hit the /slack/events endpoint")  # debug
+
     if not verifier.is_valid_request(request.get_data(), request.headers):
         return make_response("Invalid signature", 403)
 
@@ -229,7 +231,7 @@ def handle_submission(values, user_id):
 
         # DM notification to Alanna
         try:
-            alanna_info = client.users_lookupByEmail(email="tahseenr@anterior.com")
+            alanna_info = client.users_lookupByEmail(email="tahseen@anterior.com")
             alanna_id = alanna_info["user"]["id"]
 
             client.chat_postMessage(
