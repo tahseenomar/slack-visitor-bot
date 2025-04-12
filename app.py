@@ -225,7 +225,7 @@ def handle_submission(values, user_id):
         client.chat_postMessage(
             channel=user_id,
             text=(
-                f"✅ Your visitor *{guest_name}* has been registered for the NYC office.\n"
+                f"✅ Your visitor *{guest_name}* has been registered for the NYC office. You are responsible for any room bookings or other requirements. Please let Alanna know if you need to make any changes to this registration.\n"
                 f"📆 {start_dt.strftime('%b %d, %I:%M %p')} – {end_dt.strftime('%I:%M %p')}\n"
                 f"📝 *Reason*: {reason}"
             )
