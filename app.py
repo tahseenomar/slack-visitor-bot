@@ -134,6 +134,7 @@ def open_modal(trigger_id):
                         "action_id": "value",
                         "multiline": True
                     }
+                    "optional": True
                 }
             ]
         }
@@ -233,7 +234,7 @@ def handle_submission(values, user_id):
 
         # DM notification to Alanna
         try:
-            alanna_info = client.users_lookupByEmail(email="tahseen@anterior.com")
+            alanna_info = client.users_lookupByEmail(email="alanna.cooper@anterior.com")
             alanna_id = alanna_info["user"]["id"]
 
             client.chat_postMessage(
