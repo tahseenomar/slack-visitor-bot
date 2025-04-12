@@ -108,7 +108,7 @@ def open_modal(trigger_id):
                 {
                     "type": "input",
                     "block_id": "start_time",
-                    "label": {"type": "plain_text", "text": "Start time"},
+                    "label": {"type": "plain_text", "text": "Start time (ET)"},
                     "element": {
                         "type": "plain_text_input",
                         "action_id": "value"
@@ -118,7 +118,7 @@ def open_modal(trigger_id):
                 {
                     "type": "input",
                     "block_id": "end_time",
-                    "label": {"type": "plain_text", "text": "End time"},
+                    "label": {"type": "plain_text", "text": "End time (ET)"},
                     "element": {
                         "type": "plain_text_input",
                         "action_id": "value"
@@ -203,7 +203,7 @@ def handle_submission(values, user_id):
         host_email = host["email"]
         host_first_name = host["first_name"]
 
-        print("📥 Visitor submitted:")
+        print("📥 Visitor (NYC) submitted:")
         print(f"👤 Guest: {guest_name}")
         print(f"📧 Email: {guest_email}")
         print(f"🧑 Host: {host_first_name} ({host_email})")
@@ -225,7 +225,7 @@ def handle_submission(values, user_id):
         client.chat_postMessage(
             channel=user_id,
             text=(
-                f"✅ Your visitor *{guest_name}* has been registered.\n"
+                f"✅ Your visitor *{guest_name}* has been registered for the NYC office.\n"
                 f"📆 {start_dt.strftime('%b %d, %I:%M %p')} – {end_dt.strftime('%I:%M %p')}\n"
                 f"📝 *Reason*: {reason}"
             )
@@ -239,7 +239,7 @@ def handle_submission(values, user_id):
             client.chat_postMessage(
                 channel=alanna_id,
                 text=(
-                    f"🚪 A visitor has been registered:\n"
+                    f"🚪 A visitor has been registered for the NYC office:\n"
                     f"👤 *Guest*: {guest_name}\n"
                     f"📅 {start_dt.strftime('%b %d')} from {start_dt.strftime('%I:%M %p')} to {end_dt.strftime('%I:%M %p')}\n"
                     f"📝 *Reason*: {reason}\n"
@@ -269,7 +269,7 @@ def create_event(start_dt, end_dt, guest_name, host_first_name, host_email, reas
     attendees.append({"email": "alanna.cooper@anterior.com"})
 
     event = {
-        'summary': f"Visitor: {guest_name} to see {host_first_name}",
+        'summary': f"Visitor (NYC): {guest_name} to see {host_first_name}",
         'description': reason,
         'start': {
             'dateTime': start_dt.isoformat(),
