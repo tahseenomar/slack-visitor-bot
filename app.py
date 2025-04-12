@@ -2,6 +2,7 @@ import os
 import json
 import re
 import time
+import sys
 from datetime import datetime
 from flask import Flask, request, make_response, Response
 from slack_sdk import WebClient
@@ -20,6 +21,7 @@ verifier = SignatureVerifier(signing_secret=os.environ["SLACK_SIGNING_SECRET"])
 @app.route("/slack/events", methods=["POST"])
 def slack_events():
     print("🚨 Slack just hit the /slack/events endpoint")  # debug
+    sys.stdout.flush()
 
     if not verifier.is_valid_request(request.get_data(), request.headers):
         return make_response("Invalid signature", 403)
