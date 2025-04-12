@@ -217,15 +217,33 @@ def handle_submission(values, user_id):
             reason=reason
         )
 
-        # Confirmation DM
+        # DM confirmation to host
         client.chat_postMessage(
             channel=user_id,
             text=(
-                f"✅ Your visitor *{guest_name}* has been registered. You are responsible for any room bookings or other requirements. Please let Alanna know if you need to make any changes to this registration.\n"
+                f"✅ Your visitor *{guest_name}* has been registered.\n"
                 f"📆 {start_dt.strftime('%b %d, %I:%M %p')} – {end_dt.strftime('%I:%M %p')}\n"
                 f"📝 *Reason*: {reason}"
             )
         )
+
+        # DM notification to Alanna
+        try:
+            alanna_info = client.users_lookupByEmail(email="tahseenr@anterior.com")
+            alanna_id = alanna_info["user"]["id"]
+
+            client.chat_postMessage(
+                channel=alanna_id,
+                text=(
+                    f"🚪 A visitor has been registered:\n"
+                    f"👤 *Guest*: {guest_name}\n"
+                    f"📅 {start_dt.strftime('%b %d')} from {start_dt.strftime('%I:%M %p')} to {end_dt.strftime('%I:%M %p')}\n"
+                    f"📝 *Reason*: {reason}\n"
+                    f"🧑 *Host*: {host_first_name}"
+                )
+            )
+        except Exception as e:
+            print("⚠️ Failed to DM Alanna:", e)
 
     except Exception as e:
         print("❌ Exception in handle_submission:", e)
@@ -241,9 +259,10 @@ def create_event(start_dt, end_dt, guest_name, host_first_name, host_email, reas
 
     service = build('calendar', 'v3', credentials=credentials)
 
-    attendees = [{"email": "alanna.cooper@anterior.com"}]
+    attendees = []
     if host_email:
-        attendees.insert(0, {"email": host_email})
+        attendees.append({"email": host_email})
+    attendees.append({"email": "alanna.cooper@anterior.com"})
 
     event = {
         'summary': f"Visitor: {guest_name} to see {host_first_name}",
