@@ -76,20 +76,20 @@ def open_modal(trigger_id):
         view={
             "type": "modal",
             "callback_id": "visitor_form",
-            "title": {"type": "plain_text", "text": "Register a guest"},
+            "title": {"type": "plain_text", "text": "Register a visitor"},
             "submit": {"type": "plain_text", "text": "Submit"},
             "close": {"type": "plain_text", "text": "Cancel"},
             "blocks": [
                 {
                     "type": "input",
                     "block_id": "guest_name",
-                    "label": {"type": "plain_text", "text": "Guest's name"},
+                    "label": {"type": "plain_text", "text": "Visitor's name"},
                     "element": {"type": "plain_text_input", "action_id": "value"}
                 },
                 {
                     "type": "input",
                     "block_id": "guest_email",
-                    "label": {"type": "plain_text", "text": "Guest's email"},
+                    "label": {"type": "plain_text", "text": "Visitor's email"},
                     "element": {
                         "type": "plain_text_input",
                         "action_id": "value"
@@ -204,7 +204,7 @@ def handle_submission(values, user_id):
         host_first_name = host["first_name"]
 
         print("📥 Visitor (NYC) submitted:")
-        print(f"👤 Guest: {guest_name}")
+        print(f"👤 Visitor: {guest_name}")
         print(f"📧 Email: {guest_email}")
         print(f"🧑 Host: {host_first_name} ({host_email})")
         print(f"📅 Date: {date}")
@@ -240,7 +240,7 @@ def handle_submission(values, user_id):
                 channel=alanna_id,
                 text=(
                     f"🚪 A visitor has been registered for the NYC office:\n"
-                    f"👤 *Guest*: {guest_name}\n"
+                    f"👤 *Visitor*: {guest_name}\n"
                     f"📅 {start_dt.strftime('%b %d')} from {start_dt.strftime('%I:%M %p')} to {end_dt.strftime('%I:%M %p')}\n"
                     f"📝 *Reason*: {reason}\n"
                     f"🧑 *Host*: {host_first_name}"
