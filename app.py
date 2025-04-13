@@ -84,8 +84,7 @@ def open_modal(trigger_id):
                     "type": "input",
                     "block_id": "guest_name",
                     "label": {"type": "plain_text", "text": "Visitor's name"},
-                    "element": {"type": "plain_text_input", "action_id": "value"},
-                    "placeholder": {"type": "plain_text","text": " "}
+                    "element": {"type": "plain_text_input", "action_id": "value"}
                 },
                 {
                     "type": "input",
@@ -95,7 +94,6 @@ def open_modal(trigger_id):
                         "type": "plain_text_input",
                         "action_id": "value"
                     },
-                    "placeholder": {"type": "plain_text","text": " "},
                     "optional": True
                 },
                 {
@@ -106,7 +104,6 @@ def open_modal(trigger_id):
                         "type": "datepicker",
                         "action_id": "value"
                     }
-                    "placeholder": {"type": "plain_text","text": " "}
                 },
                 {
                     "type": "input",
@@ -117,7 +114,6 @@ def open_modal(trigger_id):
                         "action_id": "value"
                     },
                     "hint": {"type": "plain_text", "text": "E.g., 2:30pm"}
-                    "placeholder": {"type": "plain_text","text": " "}
                 },
                 {
                     "type": "input",
@@ -128,7 +124,6 @@ def open_modal(trigger_id):
                         "action_id": "value"
                     },
                     "hint": {"type": "plain_text", "text": "E.g., 3:30pm"}
-                    "placeholder": {"type": "plain_text","text": " "}
                 },
                 {
                     "type": "input",
@@ -139,7 +134,6 @@ def open_modal(trigger_id):
                         "action_id": "value",
                         "multiline": True
                     }
-                    "placeholder": {"type": "plain_text","text": " "}
                 }
             ]
         }
