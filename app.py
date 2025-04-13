@@ -76,7 +76,7 @@ def open_modal(trigger_id):
         view={
             "type": "modal",
             "callback_id": "visitor_form",
-            "title": {"type": "plain_text", "text": "Register a visitor"},
+            "title": {"type": "plain_text", "text": "Register a visitor (NYC)"},
             "submit": {"type": "plain_text", "text": "Submit"},
             "close": {"type": "plain_text", "text": "Cancel"},
             "blocks": [
