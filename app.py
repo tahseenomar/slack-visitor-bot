@@ -89,7 +89,7 @@ def open_modal(trigger_id):
                         "action_id": "value",
                         "placeholder": {
                             "type": "plain_text",
-                            "text": " "
+                            "text": "Enter visitor's full name"
                         }
                     }
                 },
@@ -102,7 +102,7 @@ def open_modal(trigger_id):
                         "action_id": "value",
                         "placeholder": {
                             "type": "plain_text",
-                            "text": " "
+                            "text": "Enter visitor's email address"
                         }
                     },
                     "optional": True
@@ -119,16 +119,15 @@ def open_modal(trigger_id):
                 {
                     "type": "input",
                     "block_id": "start_time",
-                    "label": {"type": "plain_text", "text": "Start time (ET)"},
+                    "label": {"type": "plain_text", "text": "Start time"},
                     "element": {
                         "type": "plain_text_input",
                         "action_id": "value",
                         "placeholder": {
                             "type": "plain_text",
-                            "text": " "
+                            "text": "Enter start time in ET (NYC) e.g., 2.30pm"
                         }
                     },
-                    "hint": {"type": "plain_text", "text": "E.g., 2:30pm"}
                 },
                 {
                     "type": "input",
@@ -139,10 +138,9 @@ def open_modal(trigger_id):
                         "action_id": "value",
                         "placeholder": {
                             "type": "plain_text",
-                            "text": " "
+                            "text": "Enter end time in ET (NYC) e.g., 3.30pm"
                         }
                     },
-                    "hint": {"type": "plain_text", "text": "E.g., 3:30pm"}
                 },
                 {
                     "type": "input",
@@ -154,7 +152,7 @@ def open_modal(trigger_id):
                         "multiline": True,
                         "placeholder": {
                             "type": "plain_text",
-                            "text": " "
+                            "text": "Enter reason for visit, or any additional context that might be useful for the workspace team"
                         }
                     },
                     "optional": True
