@@ -84,7 +84,14 @@ def open_modal(trigger_id):
                     "type": "input",
                     "block_id": "guest_name",
                     "label": {"type": "plain_text", "text": "Visitor's name"},
-                    "element": {"type": "plain_text_input", "action_id": "value"}
+                    "element": {
+                        "type": "plain_text_input",
+                        "action_id": "value",
+                        "placeholder": {
+                            "type": "plain_text",
+                            "text": " "
+                        }
+                    }
                 },
                 {
                     "type": "input",
@@ -92,7 +99,11 @@ def open_modal(trigger_id):
                     "label": {"type": "plain_text", "text": "Visitor's email"},
                     "element": {
                         "type": "plain_text_input",
-                        "action_id": "value"
+                        "action_id": "value",
+                        "placeholder": {
+                            "type": "plain_text",
+                            "text": " "
+                        }
                     },
                     "optional": True
                 },
@@ -111,7 +122,11 @@ def open_modal(trigger_id):
                     "label": {"type": "plain_text", "text": "Start time (ET)"},
                     "element": {
                         "type": "plain_text_input",
-                        "action_id": "value"
+                        "action_id": "value",
+                        "placeholder": {
+                            "type": "plain_text",
+                            "text": " "
+                        }
                     },
                     "hint": {"type": "plain_text", "text": "E.g., 2:30pm"}
                 },
@@ -121,7 +136,11 @@ def open_modal(trigger_id):
                     "label": {"type": "plain_text", "text": "End time (ET)"},
                     "element": {
                         "type": "plain_text_input",
-                        "action_id": "value"
+                        "action_id": "value",
+                        "placeholder": {
+                            "type": "plain_text",
+                            "text": " "
+                        }
                     },
                     "hint": {"type": "plain_text", "text": "E.g., 3:30pm"}
                 },
@@ -132,8 +151,13 @@ def open_modal(trigger_id):
                     "element": {
                         "type": "plain_text_input",
                         "action_id": "value",
-                        "multiline": True
-                    }
+                        "multiline": True,
+                        "placeholder": {
+                            "type": "plain_text",
+                            "text": " "
+                        }
+                    },
+                    "optional": True
                 }
             ]
         }
