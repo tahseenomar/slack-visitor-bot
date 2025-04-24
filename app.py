@@ -104,8 +104,7 @@ def open_modal(trigger_id):
                             "type": "plain_text",
                             "text": "Enter visitor's email address"
                         }
-                    },
-                    "optional": True
+                    }
                 },
                 {
                     "type": "input",
