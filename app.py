@@ -132,7 +132,7 @@ def open_modal(trigger_id):
                 {
                     "type": "input",
                     "block_id": "end_time",
-                    "label": {"type": "plain_text", "text": "End time (ET)"},
+                    "label": {"type": "plain_text", "text": "End time"},
                     "element": {
                         "type": "plain_text_input",
                         "action_id": "value",
