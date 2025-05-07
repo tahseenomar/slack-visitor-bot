@@ -262,6 +262,7 @@ def handle_submission(values, user_id):
                 text=(
                     f"🚪 A visitor has been registered for the NYC office:\n"
                     f"👤 *Visitor*: {guest_name}\n"
+                    f"📧 *Visitor Email*: {guest_email}\n"
                     f"📅 {start_dt.strftime('%b %d')} from {start_dt.strftime('%I:%M %p')} to {end_dt.strftime('%I:%M %p')}\n"
                     f"📝 *Reason*: {reason}\n"
                     f"🧑 *Host*: {host_first_name}"
